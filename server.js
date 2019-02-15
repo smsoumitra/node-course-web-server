@@ -33,7 +33,9 @@ app.get('/',(req, res)=>{
 });
 
 app.get('/about', (req, res)=> {
-    res.render('about.hbs')
+    res.render('about.hbs', {
+        pageTitle: 'About Page'
+    })
     /* let pro = new Promise((resolve, reject)=>{
         setTimeout(()=>{
             //res.send("From timeout resolve");
@@ -48,7 +50,14 @@ app.get('/about', (req, res)=> {
 
 app.get('/home', (req, res)=>{
     res.render('home.hbs', {
-        welcomeMsg: 'Welcome home!'
+        welcomeMsg: 'Welcome home!',
+        pageTitle: 'Home Page'
+    })
+})
+
+app.get('/projects', (req, res)=>{
+    res.render('projects.hbs', {
+        pageTitle: 'Projects Page'
     })
 })
 
